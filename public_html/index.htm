@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>乖小孩</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  background: #90DDE9;
+  color: #f8fcff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.logo-container img {
+  max-width: 400px;
+  width: 80%;
+  height: auto;
+}
+
+.menu-links {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu-links a {
+  color: #f8fcff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: opacity 0.2s;
+}
+
+.menu-links a:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .menu-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="logo-container">
+  <img src="index pic/乖小孩.png" alt="乖小孩">
+</div>
+<div class="menu-links">
+  <a href="about me.html">個人介紹</a>
+  <a href="work.html">網站練習</a>
+  <a href="my project.html">個人企畫書</a>
+  <a href="my project.html">團體企畫書</a>
+</div>
+</body>
+</html>

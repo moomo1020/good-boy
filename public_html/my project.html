@@ -1,0 +1,638 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>乖小孩 - 遊戲企畫書</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  background: #90DDE9;
+  color: #f8fcff;
+  line-height: 1.8;
+}
+
+.back-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #f8fcff;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 100;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.download-buttons {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px 0;
+}
+
+.download-buttons a {
+  display: inline-block;
+  padding: 12px 24px;
+  margin: 0 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #f8fcff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.download-buttons a:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 32px;
+}
+
+.section {
+  margin-bottom: 60px;
+}
+
+.section h2 {
+  font-size: 18pt;
+  margin-bottom: 24px;
+  font-weight: 800;
+}
+
+.section h3 {
+  font-size: 16pt;
+  margin: 32px 0 16px;
+  font-weight: 700;
+}
+
+.section h4 {
+  font-size: 14pt;
+  margin: 24px 0 12px;
+  font-weight: 600;
+}
+
+.section p {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.toc {
+  padding: 32px 0;
+  margin-bottom: 48px;
+}
+
+.toc h3 {
+  margin-bottom: 24px;
+  font-size: 20px;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+}
+
+.toc li {
+  margin-bottom: 12px;
+  padding-left: 24px;
+}
+
+.toc .level1 {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 8px;
+  padding-left: 0;
+}
+
+.toc .level2 {
+  font-weight: 500;
+  font-size: 16px;
+  margin-left: 24px;
+  padding-left: 0;
+}
+
+.image-container {
+  text-align: center;
+  margin: 24px 0;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 600px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.reference-link {
+  color: #f8fcff;
+  text-decoration: underline;
+  margin: 0 8px;
+}
+
+.reference-link:hover {
+  opacity: 0.7;
+}
+
+.reference-item {
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.reference-item img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.flowchart {
+  margin: 32px 0;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+}
+
+.flowchart-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 20px;
+  margin: 8px 0;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.flowchart-arrow {
+  text-align: center;
+  margin: 8px 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.flowchart-branch {
+  display: flex;
+  gap: 20px;
+  margin: 16px 0;
+}
+
+.flowchart-branch-item {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 20px;
+  }
+  .flowchart-branch {
+    flex-direction: column;
+  }
+  .reference-item {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+<a href="index.htm" class="back-btn">返回首頁</a>
+
+<div class="container">
+  <div class="download-buttons">
+    <a href="MY pic/乖小孩.pdf" download>下載企畫書</a>
+    <a href="MY pic/乖小孩 簡報.pptx" download>下載簡報</a>
+  </div>
+
+  <div class="toc">
+    <h3>目錄</h3>
+    <ul>
+      <li class="level1">壹、發想
+        <ul>
+          <li class="level2">一、製作動機</li>
+          <li class="level2">二、遊戲目的</li>
+        </ul>
+      </li>
+      <li class="level1">貳、遊戲類型
+        <ul>
+          <li class="level2">一、遊玩人數</li>
+          <li class="level2">二、遊玩器材</li>
+          <li class="level2">三、遊戲與美術風格</li>
+        </ul>
+      </li>
+      <li class="level1">參、故事大綱</li>
+      <li class="level1">肆、遊戲流程
+        <ul>
+          <li class="level2">一、操作方式</li>
+          <li class="level2">二、劇情</li>
+          <li class="level2">三、玩法介紹</li>
+          <li class="level2">四、小遊戲設計</li>
+          <li class="level2">五、流程圖</li>
+          <li class="level2">六、市場分析</li>
+        </ul>
+      </li>
+      <li class="level1">伍、參考資料
+        <ul>
+          <li class="level2">一、遊戲風格參考</li>
+        </ul>
+      </li>
+      <li class="level1">陸、人員配置
+        <ul>
+          <li class="level2">一、甘特圖</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <section id="section1" class="section">
+    <h2>壹、發想</h2>
+    
+    <h3 id="section1-1">一、製作動機</h3>
+    <p>我發現不管是以前還是現在，許多關係都缺乏想法上的溝通，無論是孩子或是父母、朋友還是情人雙方都對對方有許多的要求，尤其在生活習慣上有大大的隔閡。</p>
+    <p>例如：父母希望孩子能夠好好讀書不要一直玩手機，但孩子可能只是使用一下下而已就被斥責，雙方缺乏溝通的話很容易造成沒有必要的爭執，並且可能會有孩子隱瞞父母的狀況發生。因此我發想這款遊戲，希望可以透過可愛又搞笑荒謬的呈現方式，引起人們的共鳴，藉此促進家庭之間的溝通橋樑，同時不管是家人還是朋友都可以一起同樂這款遊戲。</p>
+
+    <h3 id="section1-2">二、遊戲目的</h3>
+    <p>遊戲採取遊玩途徑門檻低的網頁遊戲（也可以做成軟體的那種電腦遊戲暫時還沒有定案），讓孩子們在網路上容易發現這款遊戲，0門檻的情況下與朋友或是家人一同遊玩，藉此促進親友之間的感情，也希望家長在遊玩這款遊戲時能夠了解孩子的想法，增加雙方的溝通。</p>
+  </section>
+
+  <section id="section2" class="section">
+    <h2>貳、遊戲類型</h2>
+    
+    <h3 id="section2-1">一、遊玩人數</h3>
+    <p>屬於多人合作遊戲，最少兩個人，最多四個人，必須要多人合作才可以完成關卡。</p>
+
+    <h3 id="section2-2">二、遊玩器材</h3>
+    <p>使用鍵盤遊玩，一台電腦最多可遊玩一位玩家，分別使WASD與上下左右鍵，拿取與丟棄等等功能可使用左右ctrl、shift，二～四人遊玩需使用連線方式進行。</p>
+
+    <h3 id="section2-3">三、遊戲與美術風格</h3>
+    <p>使用童趣可愛的色彩，遊戲採用平面的視角進行遊玩，玩家將扮演小孩視角，達成父母下達的任務，劇情會隨著關卡慢慢推進。</p>
+    
+    <h4>角色風格與設計圖</h4>
+    
+    <div class="image-container">
+      <img src="MY pic/1.PNG" alt="遊戲封面示意">
+    </div>
+    <p>遊戲封面示意</p>
+
+    <div class="image-container">
+      <img src="MY pic/8.png" alt="孩子們（主角們）">
+      <img src="MY pic/9.png" alt="父母">
+    </div>
+    <p>孩子們（主角們）</p>
+
+    <div class="image-container">
+      <img src="MY pic/5.PNG" alt="遊戲關卡畫面示意圖">
+    </div>
+    <p>遊戲關卡畫面示意圖</p>
+
+    <div class="image-container">
+      <img src="MY pic/2.PNG" alt="模式選擇">
+    </div>
+    <p>模式選擇</p>
+
+    <div class="image-container">
+      <img src="MY pic/22.png" alt="漫畫示意">
+    </div>
+    <p>漫畫示意</p>
+
+    <div class="image-container">
+      <img src="MY pic/3.PNG" alt="輸入房號示意">
+    </div>
+    <p>輸入房號示意</p>
+
+    <div class="image-container">
+      <img src="MY pic/4.PNG" alt="選擇角色畫面">
+      <img src="MY pic/6.PNG" alt="選擇角色畫面">
+    </div>
+    <p>選擇角色畫面</p>
+
+    <div class="image-container">
+      <img src="MY pic/7.PNG" alt="結算畫面示意圖">
+    </div>
+    <p>結算畫面示意圖</p>
+
+    <div class="image-container">
+      <img src="MY pic/18.png" alt="關卡小提示">
+      <img src="MY pic/20.png" alt="關卡小提示">
+    </div>
+    <p>關卡小提示</p>
+
+    <div class="image-container">
+      <img src="MY pic/13.png" alt="遊戲遊玩畫面示意">
+      <img src="MY pic/14.png" alt="遊戲遊玩畫面示意">
+      <img src="MY pic/15.png" alt="遊戲遊玩畫面示意">
+    </div>
+    <p>遊戲遊玩畫面示意</p>
+  </section>
+
+  <section id="section3" class="section">
+    <h2>參、故事大綱</h2>
+    <p>主角們的爸爸媽媽出去買菜就快要回來了，但是他們交代的家事還有功課都還沒有做完，而且偷偷使用的手機還有電視都要關起來才行！一定要在時間之內完成所有的目標，以免被父母發現！</p>
+  </section>
+
+  <section id="section4" class="section">
+    <h2>肆、遊戲流程</h2>
+    
+    <h3 id="section4-1">一、操作方式</h3>
+    <p><strong>確定選擇：</strong>使用滑鼠或空白鍵</p>
+    <p><strong>移動方式：</strong>使用鍵盤WASD或是上下左右鍵</p>
+    <p><strong>放置、丟棄、使用：</strong>左右ctrl、shift等等其他按鍵</p>
+    <p>玩家可以自行設定習慣的按鍵。</p>
+
+    <h3 id="section4-2">二、劇情</h3>
+    <p>遊戲開頭時會有一個小動畫。</p>
+    <p>（以小動畫呈現）</p>
+    <p>主角們趁父母不在時偷偷遊玩電腦、手機，一不小心忘記了時間，結果時間匆匆流逝，有人發現爸媽快要回來了！大家必須齊心協力完成任務才行！</p>
+    <p>關卡結束時會進入結局動畫，以父母回到家開門畫面呈現，表示父母最終還是發先主角們的行為了。</p>
+
+    <h3 id="section4-3">三、玩法介紹</h3>
+    <p>遊戲遊玩時間無上限，直到玩家沒有在指定時間達成任務時，遊戲會強制中止，接著出現最高分的分數以及最長時長，玩家一旦有更高的紀錄將會再覆蓋原先紀錄。</p>
+    <p>遊戲開始時會有任務提示，可能會有父母下達的洗衣服、掃拖地、收折衣服等等的任務，也會有充飽手機電量（假裝沒有玩手機）、關閉電腦、電視讓其降溫以免被發現、寫學校功課等等，遊戲會隨著遊戲時長推進越來越多任務且困難。</p>
+
+    <h3 id="section4-4">四、小遊戲設計</h3>
+    <p><strong>1.時鐘沒電（滑鼠操作）</strong></p>
+    <p>玩家需要走到時鐘附近，選擇時鐘，用滑鼠拖動的方式換上電池，換完後還要調整正確時間。</p>
+    <div class="image-container">
+      <img src="MY pic/misho/1-1.jpg" alt="時鐘沒電1">
+      <img src="MY pic/misho/1-2.jpg" alt="時鐘沒電2">
+    </div>
+
+    <p><strong>2.關電視降溫（空白鍵）</strong></p>
+    <p>玩家走到電視附近，選取電視就會自動關閉，退熱時間約10秒，期間玩家可以做其他事。</p>
+    <div class="image-container">
+      <img src="MY pic/misho/2.jpg" alt="關電視降溫">
+    </div>
+
+    <p><strong>3.收手機（可雙人）（空白鍵）</strong></p>
+    <p>桌上、床上、廚房隨機出現手機，玩家需找到手機位子，選取手機後，先拿去充電10秒（期間玩家可以做其他事）再將手機藏至指定位子。</p>
+    <div class="image-container">
+      <img src="MY pic/misho/3-1.jpg" alt="收手機1">
+      <img src="MY pic/misho/3-2.jpg" alt="收手機2">
+      <img src="MY pic/misho/3-3.jpg" alt="收手機3">
+      <img src="MY pic/misho/3-4.jpg" alt="收手機4">
+    </div>
+
+    <p><strong>4.餵貓咪（空白鍵）</strong></p>
+    <p>玩家走到貓咪附近，拿飼料餵貓咪，狂按空白鍵阻止貓咪推飼料，持續10秒，玩家的飼料需達到正常量。</p>
+    <div class="image-container">
+      <img src="MY pic/misho/4.jpg" alt="餵貓咪">
+    </div>
+
+    <p><strong>5.關掉媽媽燒的熱水（空白鍵）</strong></p>
+    <p>媽媽燒的水會隨機生成，玩家需要走到瓦斯爐附近，時不時會突然滾熟，主角需要快速關火以免火燒家。</p>
+    <div class="image-container">
+      <img src="MY pic/misho/5.jpg" alt="關掉媽媽燒的熱水">
+    </div>
+
+    <p><strong>6.煮午餐（可雙人）（空白鍵）</strong></p>
+    <p>有些玩家會隨機肚子餓（一次會餓1～3名玩家）玩家需要走到瓦斯爐附近，煮給其他人吃（也可以合作煮）</p>
+    <p>煮法：在冰箱拿食材，丟進隨機生成的鍋子（鍋子上會有食材進度條，滿了就會開始煮）煮的期間，玩家時不時需要拿桌上的杯子加水以免燒焦，煮10秒即可（玩家會自動飽了)</p>
+    <div class="image-container">
+      <img src="MY pic/misho/6-1.jpg" alt="煮午餐1">
+      <img src="MY pic/misho/6-2.jpg" alt="煮午餐2">
+    </div>
+
+    <p><strong>7.洗碗（滑鼠）</strong></p>
+    <p>玩家需走到洗碗槽附近，洗碗槽會自己生成碗讓玩家洗，玩家用滑鼠長按並滑動，即可刷掉髒污（一次洗1～3個碗）。</p>
+    <div class="image-container">
+      <img src="MY pic/misho/7-1.jpg" alt="洗碗1">
+      <img src="MY pic/misho/7-2.jpg" alt="洗碗2">
+    </div>
+
+    <p><strong>8.收盤子（空白鍵）</strong></p>
+    <p>餐桌上會自己生成盤子，玩家需要走到餐桌附近收碗，丟進洗碗槽，然後接續洗碗任務。</p>
+    <div class="image-container">
+      <img src="MY pic/misho/8.jpg" alt="收盤子">
+    </div>
+
+    <p><strong>9.擦桌子（滑鼠）</strong></p>
+    <p>桌子會隨機變髒，也可能因為收盤子而變髒，玩家需要走到餐桌，用滑鼠長按並滑動的方式擦桌子（跟洗碗一樣）</p>
+    <div class="image-container">
+      <img src="MY pic/misho/9.jpg" alt="擦桌子">
+    </div>
+
+    <p><strong>10.收衣服（滑鼠）</strong></p>
+    <p>衣服會隨機生成，玩家需先去拿洗衣籃，然後走到外面收衣服。</p>
+    <p>玩法：玩家操控洗衣籃位子，衣服會隨機掉落，然後玩家需要接住衣服。外面風很大，所以時不時衣服會漂很快，接不到是你的問題，如果接不到要去洗衣服（洗衣服任務）都接到的話，玩家需要走到衣櫃，接續放衣服的任務。</p>
+    <div class="image-container">
+      <img src="MY pic/misho/10.jpg" alt="收衣服">
+    </div>
+
+    <p><strong>11.晾衣服（可雙人）（滑鼠）</strong></p>
+    <p>衣服洗完後要去晾衣服，先去洗衣機旁邊拿取後，走出去會開始晾衣服小遊戲。</p>
+    <p>玩法：外面風很大，衣服沒有晾好會被飛走。玩家1需要用滑鼠拖曳衣服，交給玩家2掛上衣架，玩家1與玩家2的位子需要靠近，確認衣服有在玩家2身上才可以放開滑鼠，不然衣服會被吹走，引起洗衣服任務。</p>
+    <div class="image-container">
+      <img src="MY pic/misho/11.jpg" alt="晾衣服">
+      <img src="MY pic/misho/11-1.jpg" alt="晾衣服1">
+    </div>
+
+    <p><strong>12.洗衣服（空白鍵）</strong></p>
+    <p>衣服會隨機出現在洗衣籃需要洗，玩家需要走到洗衣籃附近，將衣服拿去洗衣機洗，10秒後洗完，會開啟晾衣服任務。</p>
+    <div class="image-container">
+      <img src="MY pic/misho/12.jpg" alt="洗衣服">
+      <img src="MY pic/misho/12-1.jpg" alt="洗衣服1">
+    </div>
+
+    <p><strong>13.刷馬桶（滑鼠）</strong></p>
+    <p>馬桶會隨機變髒，玩家需走到廁所，刷廁所，玩法與洗碗差不多。</p>
+    <div class="image-container">
+      <img src="MY pic/misho/13.jpg" alt="刷馬桶">
+    </div>
+
+    <p><strong>14.澆花（空白鍵）</strong></p>
+    <p>花時不時會口渴，玩家需要走到外面，拿起澆花器澆花，每一朵花都有進度條，並且會不停的扣進度，玩家需要10秒內，讓花進度條維持在綠色。</p>
+    <div class="image-container">
+      <img src="MY pic/misho/14.jpg" alt="澆花">
+    </div>
+
+    <p><strong>15.折棉被（滑鼠）</strong></p>
+    <p>棉被時不時會突然亂掉，玩家需走到房間折棉被，這個任務有點傻逼，玩家可以透過滑鼠隨意長按滑動，折出不同形狀的棉被，折完就好了。（約有天鵝形狀、豆腐狀、金字塔狀等等等….)</p>
+    <div class="image-container">
+      <img src="MY pic/misho/15.jpg" alt="折棉被">
+      <img src="MY pic/misho/15-1.jpg" alt="折棉被1">
+      <img src="MY pic/misho/15-2.jpg" alt="折棉被2">
+      <img src="MY pic/misho/15-3.jpg" alt="折棉被3">
+    </div>
+
+    <p><strong>16.寫作業（可雙人）（打字、滑鼠）</strong></p>
+    <p>玩家一會獲得一本作業書，玩家二會獲得一本答案書，兩方都會獲得相同的題目，根據題目的內容玩家二需要在答案書中尋找答案，並告訴玩家一。</p>
+
+    <p><strong>17.放衣服（可雙人）（滑鼠）</strong></p>
+    <p>玩家衣服收完了，會進入放衣服任務。走到衣櫃那邊，玩家需要將衣服從衣架拿下來，有點益智遊戲的感覺。透過滑鼠長按拖曳，玩家1操作衣架，玩家2操作衣服，遊戲目的是將這兩個物體分開即可（取2件即可）</p>
+    <div class="image-container">
+      <img src="MY pic/misho/17.jpg" alt="放衣服">
+      <img src="MY pic/misho/17-1.jpg" alt="放衣服1">
+    </div>
+
+    <p><strong>18.打掃（可雙人）（空白鍵）</strong></p>
+    <p>房子會隨機生成垃圾，在任務出現時會生成掃把，給玩家打掃。</p>
+    <div class="image-container">
+      <img src="MY pic/misho/18.jpg" alt="打掃">
+    </div>
+
+    <p><strong>19.收書櫃（滑鼠）</strong></p>
+    <p>書櫃時不時會顏色亂掉，將同色系的、同高低的書擺在一起即可。</p>
+    <div class="image-container">
+      <img src="MY pic/misho/19.jpg" alt="收書櫃">
+    </div>
+
+    <p><strong>20.洗廁所（空白鍵）</strong></p>
+    <p>廁所時不時會髒，玩家需要「一個人」去廁所拿蓮蓬頭沖，拿蓮蓬頭不可以離其他玩家太近，也不可以走出廁所。</p>
+    <p>正常情況下：廁所髒污會隨著玩家的水柱變乾淨 完成任務</p>
+    <p>噴到人的情況：引起隱藏洗澡（空白鍵），並且又要洗衣服～</p>
+    <p>噴到外面情況下：引起隱藏任務拖地（空白鍵），房子會生成拖把，讓其他玩家拖地。玩家可以混亂邪惡把整個家玩淹水</p>
+    <div class="image-container">
+      <img src="MY pic/misho/20.jpg" alt="洗廁所">
+    </div>
+
+    <h3 id="section4-5">五、流程圖</h3>
+    <h4>整體遊戲流程圖</h4>
+    <div class="flowchart">
+      <div class="flowchart-box">主選單</div>
+      <div class="flowchart-arrow">↓</div>
+      <div class="flowchart-branch">
+        <div class="flowchart-branch-item">
+          <div class="flowchart-box">單人</div>
+          <div class="flowchart-arrow">↓</div>
+          <div class="flowchart-box">劇情動畫</div>
+          <div class="flowchart-arrow">↓</div>
+          <div class="flowchart-box">開始關卡</div>
+          <div class="flowchart-arrow">↓</div>
+          <div class="flowchart-box">結局動畫</div>
+          <div class="flowchart-arrow">↓</div>
+          <div class="flowchart-box">結算畫面</div>
+        </div>
+        <div class="flowchart-branch-item">
+          <div class="flowchart-box">多人</div>
+          <div class="flowchart-arrow">↓</div>
+          <div class="flowchart-box">劇情動畫</div>
+          <div class="flowchart-arrow">↓</div>
+          <div class="flowchart-box">開始關卡</div>
+          <div class="flowchart-arrow">↓</div>
+          <div class="flowchart-box">結局動畫</div>
+          <div class="flowchart-arrow">↓</div>
+          <div class="flowchart-box">結算畫面</div>
+        </div>
+        <div class="flowchart-branch-item">
+          <div class="flowchart-box">結束遊戲</div>
+        </div>
+      </div>
+    </div>
+
+    <h4>關卡流程圖</h4>
+    <div class="flowchart">
+      <div class="flowchart-box">關卡畫面</div>
+      <div class="flowchart-arrow">↓</div>
+      <div class="flowchart-box">任務提示</div>
+      <div class="flowchart-arrow">↓</div>
+      <div class="flowchart-box">開始任務</div>
+      <div class="flowchart-arrow">↓</div>
+      <div class="flowchart-branch">
+        <div class="flowchart-branch-item">
+          <div class="flowchart-box">成功</div>
+          <div class="flowchart-arrow">↓</div>
+          <div class="flowchart-box">下一關</div>
+        </div>
+        <div class="flowchart-branch-item">
+          <div class="flowchart-box">失敗</div>
+          <div class="flowchart-arrow">↓</div>
+          <div class="flowchart-box">重新開始</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 id="section4-6">六、市場分析</h3>
+    <h4>SWOT分析：</h4>
+    <p><strong>S優勢：</strong>遊玩管道簡單，適合親友同樂，容易引起人們的童年共鳴。</p>
+    <p><strong>W劣勢：</strong>客群單一，並不是所有人有一樣的童年經歷。</p>
+    <p><strong>O機會：</strong>透過輕鬆的遊戲方式，促進家庭溝通的機會。</p>
+    <p><strong>T威脅：</strong>很多同類型遊戲，需要其中脫穎而出不簡單。</p>
+    
+    <h4>目標市場與受眾：</h4>
+    <p><strong>目標市場：</strong>多人合作遊戲</p>
+    <p><strong>目標受眾：</strong>年齡約12～25歲，喜歡多人遊玩的玩家。</p>
+  </section>
+
+  <section id="section5" class="section">
+    <h2>伍、參考資料</h2>
+    
+    <h3>一、遊戲風格參考</h3>
+    <div class="reference-item">
+      <img src="MY pic/10.png" alt="煮過頭 Overcooked">
+      <div>
+        <p>煮過頭 Overcooked</p>
+        <p><a href="https://store.steampowered.com/app/728880/Overcooked_2/?l=tchinese" target="_blank" class="reference-link">https://store.steampowered.com/app/728880/Overcooked_2/?l=tchinese</a></p>
+      </div>
+    </div>
+    <div class="reference-item">
+      <img src="MY pic/11.png" alt="PICO PARK">
+      <div>
+        <p>PICO PARK</p>
+        <p><a href="https://store.steampowered.com/app/728880/Overcooked_2/?l=tchinese" target="_blank" class="reference-link">https://store.steampowered.com/app/728880/Overcooked_2/?l=tchinese</a></p>
+      </div>
+    </div>
+    <div class="reference-item">
+      <img src="MY pic/12.png" alt="Ultimate Chicken Horse">
+      <div>
+        <p>Ultimate Chicken Horse</p>
+        <p><a href="https://store.steampowered.com/app/386940/_/" target="_blank" class="reference-link">https://store.steampowered.com/app/386940/_/</a></p>
+      </div>
+    </div>
+
+    <h3>參考網址</h3>
+    <p><a href="https://store.steampowered.com/app/2644470/PICO_PARK_2/" target="_blank" class="reference-link">https://store.steampowered.com/app/2644470/PICO_PARK_2/</a></p>
+    <p><a href="https://store.steampowered.com/app/386940/_/?l=tchinese" target="_blank" class="reference-link">https://store.steampowered.com/app/386940/_/?l=tchinese</a></p>
+    <p><a href="https://store.steampowered.com/app/673750/Super_Bunny_Man/" target="_blank" class="reference-link">https://store.steampowered.com/app/673750/Super_Bunny_Man/</a></p>
+    <p><a href="https://store.steampowered.com/app/728880/Overcooked_2/?l=tchinese" target="_blank" class="reference-link">https://store.steampowered.com/app/728880/Overcooked_2/?l=tchinese</a></p>
+  </section>
+
+  <section id="section6" class="section">
+    <h2>陸、人員配置</h2>
+    
+    <h3>組長</h3>
+    <p>李雅晴</p>
+
+    <h3>動畫組</h3>
+    <p>角色動畫：李雅晴</p>
+    <p>UI動畫設計：李雅晴</p>
+    <p>劇情小動畫：李雅晴</p>
+    <p>宣傳動畫：李雅晴</p>
+    <p>過場動畫：李雅晴</p>
+
+    <h3>程式組</h3>
+    <p>遊戲核心機制：陳俞彣</p>
+    <p>互動系統：李亭耘</p>
+    <p>UI功能實作：李亭耘</p>
+    <p>資料管理：陳俞彣</p>
+    <p>測試與錯誤糾正：李亭耘、陳俞彣</p>
+
+    <h3>美術組</h3>
+    <p>主美術：李雅晴</p>
+    <p>角色與UI設計：李雅晴</p>
+    <p>角色拆分：潘侑欣、施采穎、陸妤婕</p>
+    <p>表情拆分：潘侑欣、施采穎、陸妤婕</p>
+    <p>UI繪製：潘侑欣、施采穎、陸妤婕</p>
+    <p>背景繪製：潘侑欣、施采穎、陸妤婕</p>
+    <p>前景物件：潘侑欣、施采穎、陸妤婕</p>
+
+    <h3>一、甘特圖</h3>
+    <div class="image-container">
+      <img src="MY pic/23.jpg" alt="甘特圖">
+    </div>
+  </section>
+</div>
+</body>
+</html>

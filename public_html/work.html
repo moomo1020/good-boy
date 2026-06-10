@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>乖小孩提案 - 網站練習</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  background: #90DDE9;
+  color: #f8fcff;
+  line-height: 1.8;
+}
+
+.back-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #f8fcff;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 100;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.header {
+  background: rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px 40px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  display: flex;
+  gap: 40px;
+}
+
+.sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: #f8fcff;
+  text-decoration: none;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.content {
+  flex: 1;
+}
+
+.content h2 {
+  font-size: 28px;
+  margin: 60px 0 24px;
+  font-weight: 800;
+}
+
+.content h2:first-child {
+  margin-top: 0;
+}
+
+.content h3 {
+  font-size: 24px;
+  margin: 40px 0 16px;
+  font-weight: 700;
+}
+
+.content p {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 900;
+  margin: 60px 0;
+}
+
+.image-container {
+  text-align: center;
+  margin: 32px 0;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.video-container {
+  text-align: center;
+  margin: 32px 0;
+}
+
+.video-container iframe {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    position: static;
+  }
+  .main-title {
+    font-size: 36px;
+  }
+}
+</style>
+</head>
+<body>
+<a href="index.htm" class="back-btn">返回首頁</a>
+
+<div class="header">
+  <h1>乖小孩提案</h1>
+</div>
+
+<div class="container">
+  <div class="sidebar">
+    <a href="#intro">遊戲介紹</a>
+    <a href="#concept">我們的理念</a>
+    <a href="#youtube">youtube參考</a>
+  </div>
+
+  <div class="content">
+    <h1 class="main-title">乖小孩提案</h1>
+
+    <div class="image-container">
+      <img src="work/1 - 1.PNG" alt="乖小孩提案">
+    </div>
+
+    <section id="intro">
+      <h2>遊戲介紹</h2>
+      <p>為了成為最乖的好孩子，努力完成任務吧！</p>
+      <div class="image-container">
+        <img src="work/1 - 1.PNG" alt="遊戲介紹">
+      </div>
+    </section>
+
+    <section id="concept">
+      <h2>我們的理念</h2>
+      <p>我發想這款遊戲，希望可以透過可愛又搞笑荒謬的呈現方式，引起人們的共鳴，藉此促進家庭之間的溝通橋樑，同時不管是家人還是朋友都可以一起同樂這款遊戲。</p>
+    </section>
+
+    <section id="youtube">
+      <h2>youtube參考</h2>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/RSyoMsWRL9I?si=XtiNyXOSGP18b9_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <p>參考Nintendo of America的遊戲製作</p>
+    </section>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>
