@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>乖小孩 - 結案報告書</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Noto Sans TC", sans-serif; background: #90DDE9; color: #f8fcff; line-height: 1.8; }
+.back-btn { position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: #f8fcff; text-decoration: none; border-radius: 4px; z-index: 100; }
+.back-btn:hover { background: rgba(255,255,255,0.3); }
+.header { background: rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.3); padding: 20px 40px; }
+.header h1 { font-size: 24px; font-weight: 700; }
+.container { max-width: 1200px; margin: 0 auto; padding: 40px; display: flex; gap: 40px; }
+.sidebar { width: 200px; flex-shrink: 0; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 20px; border-radius: 8px; height: fit-content; position: sticky; top: 20px; }
+.sidebar a { display: block; color: #f8fcff; text-decoration: none; padding: 12px 16px; margin-bottom: 8px; border-radius: 4px; transition: background 0.2s; font-size: 15px; }
+.sidebar a:hover { background: rgba(255,255,255,0.2); }
+.content { flex: 1; }
+.main-title { text-align: center; font-size: 48px; font-weight: 900; margin-bottom: 48px; }
+.content h3 { font-size: 24px; margin: 40px 0 16px; font-weight: 700; }
+.content h3:first-of-type { margin-top: 0; }
+.content p { margin-bottom: 16px; font-size: 16px; }
+.content h4 { font-size: 18px; margin: 24px 0 12px; font-weight: 600; }
+.image-container { text-align: center; margin: 24px 0; }
+.image-container img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 12px; }
+.image-row { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 24px 0; }
+.image-row img { max-width: 100%; max-height: 500px; height: auto; border-radius: 8px; }
+.yt-embed { max-width: 960px; margin: 24px auto; text-align: center; } .yt-embed iframe { width: 100%; max-width: 960px; height: 540px; border: none; border-radius: 8px; background: #000; display: block; margin: 0 auto; }
+ .video-fallback a { color: #f8fcff; text-decoration: underline; }
+.external-link { color: #f8fcff; text-decoration: underline; }
+.external-link:hover { opacity: 0.7; } .watch-btn { display: inline-block; margin-top: 16px; padding: 14px 28px; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: #f8fcff; text-decoration: none; border-radius: 6px; font-size: 16px; font-weight: 600; } .watch-btn:hover { background: rgba(255,255,255,0.3); }
+.link-list { list-style: none; margin-bottom: 16px; }
+.link-list li { margin-bottom: 8px; }
+@media (min-width: 1200px) { .container { max-width: 1600px; min-height: calc(100vh - 80px); } .sidebar { width: 280px; min-height: calc(100vh - 120px); padding: 32px 24px; } .sidebar a { font-size: 18px; padding: 16px 20px; } }
+@media (max-width: 768px) { .container { flex-direction: column; padding: 20px; } .sidebar { width: 100%; position: static; } .main-title { font-size: 36px; } }
+</style>
+</head>
+<body>
+<a href="index.html" class="back-btn">返回首頁</a>
+<script src="home-link.js"></script>
+
+
+<div class="header"><h1>結案報告書</h1></div>
+<div class="container">
+<div class="sidebar">
+<a href="#original">原始企劃內容</a>
+<a href="#execution">執行情形</a>
+<a href="#exhibition">展場設計成果</a>
+<a href="#reflection">檢討與反思</a>
+<a href="#progress">進度檢討</a>
+<a href="#promo">宣傳影片製作檢討</a>
+<a href="#teamwork">團隊合作檢討</a>
+<a href="#future">整體成果與未來改進方向</a>
+</div>
+<div class="content">
+<h1 class="main-title">結案報告書</h1>
+<section id="original"><h3>原始企劃內容</h3><p>原先是多人與單人遊戲</p><p>原先有20個小任務</p></section>
+<section id="execution"><h3>執行情形</h3><p>改為只有多人遊戲</p><p>任務改為6個</p></section>
+<section id="exhibition"><h3>展場設計成果</h3><h4>展場設計草圖</h4><div class="image-container"><img src="index%20pic/1.jpg" alt="展場設計草圖"></div><h4>展場海報與立牌設計</h4><div class="image-row"><img src="index%20pic/2.png" alt="展場海報與立牌設計 1"><img src="index%20pic/3.png" alt="展場海報與立牌設計 2"><img src="index%20pic/4.png" alt="展場海報與立牌設計 3"></div></section>
+<section id="reflection"><h3>檢討與反思</h3><ul class="link-list"><li>全組員影片連結：<a href="https://drive.google.com/drive/folders/1mg4aNA6nqpQIJf6iy8rqU8A0jq7SBexS?usp=drive_link" target="_blank" rel="noopener noreferrer" class="external-link">Google Drive 資料夾</a></li><li>展場影片連結：<a href="https://drive.google.com/file/d/1bWWPsU2GpgPBxHAGVmJFsJh_Pcnf8wFX/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="external-link">Google Drive 影片</a></li></ul><div class="yt-embed"><iframe width="560" height="315" src="https://www.youtube.com/embed/uLVe3DZEMkY?si=8N5XMbMAcpyH4x67" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</section>
+<section id="progress"><h3>進度檢討</h3><p><strong>問題：</strong>在製作遊戲任務時進度大大落後，無法與設計組達成平衡，其中李亭耘同學負責的遊戲小任務區塊進度較於緩慢，可能是因組員的技術尚未成熟。</p><p><strong>解決：</strong>不足的部分由陳俞彣同學補上，以及果斷做出適當的工作刪減(任務刪減)。</p></section>
+<section id="promo"><h3>宣傳影片製作檢討</h3><p>宣傳片與海報每一個人都有製作一版，我們小組是由投票的方式進行決定展出版本。</p></section>
+<section id="teamwork"><h3>團隊合作檢討</h3><p>組內的分工明確，且每個人都有盡到自己的工作本分，目前狀況較需要學習與檢討的為程式組的部分，未來會更確定組員的能力範疇去分配工作內容與應變。</p></section>
+<section id="future"><h3>整體成果與未來改進方向</h3><p>組內的整體成果我認為可以再更好，但是目前大家合作的配合程度是很好的，只是有些技術的不足，這邊在未來設計遊戲或是專案時，更應注意工作量或是技術成分，去做及時的止損。</p></section>
+</div></div>
+<script>document.querySelectorAll('.sidebar a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});});});</script>
+</body></html>

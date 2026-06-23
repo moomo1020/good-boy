@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>框架內容</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Noto Sans TC", sans-serif; background: #7ecede; color: #f8fcff; line-height: 1.8; padding: 40px 48px; }
+h2 { font-size: 28px; font-weight: 800; margin-bottom: 24px; }
+p { margin-bottom: 16px; font-size: 16px; }
+.image-container { text-align: center; margin: 24px 0; }
+.image-container img { max-width: 100%; height: auto; border-radius: 8px; }
+.video-container { position: relative; width: 100%; max-width: 960px; aspect-ratio: 16 / 9; margin: 24px 0; }
+.video-container iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; border-radius: 8px; }
+</style>
+</head>
+<body>
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var page = params.get('page') || 'intro';
+  var root = document.body;
+  var exhibit = '<iframe width="560" height="315" src="https://www.youtube.com/embed/uLVe3DZEMkY?si=8N5XMbMAcpyH4x67" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+  if (page === 'intro') {
+    root.innerHTML = '<h2>遊戲介紹</h2><p>為了成為最乖的好孩子，努力完成任務吧！</p><div class="image-container"><img src="work/1 - 1.PNG" alt="遊戲介紹"></div>';
+  } else if (page === 'concept') {
+    root.innerHTML = '<h2>我們的理念</h2><p>我發想這款遊戲，希望可以透過可愛又搞笑荒謬的呈現方式，引起人們的共鳴，藉此促進家庭之間的溝通橋樑，同時不管是家人還是朋友都可以一起同樂這款遊戲。</p>';
+  } else if (page === 'video') {
+    root.innerHTML = '<h2>展場影片</h2><div class="yt-embed">' + exhibit + '</div><p>此影片可直接在此框架內容區域觀賞。</p>';
+  } else {
+    root.innerHTML = '<h2>關於框架頁</h2><p>框架頁使用左側書籤導覽搭配右側 iframe 內容區，適合 1920×1080 電腦螢幕瀏覽。</p><p>點選左側書籤即可切換右側顯示的內容，無需重新載入整個頁面。</p>';
+  }
+})();
+</script>
+</body></html>

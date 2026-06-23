@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>乖小孩 - 個人貢獻書</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Noto Sans TC", sans-serif; background: #90DDE9; color: #f8fcff; line-height: 1.8; }
+.back-btn { position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: #f8fcff; text-decoration: none; border-radius: 4px; z-index: 100; }
+.back-btn:hover { background: rgba(255,255,255,0.3); }
+.header { background: rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.3); padding: 20px 40px; }
+.header h1 { font-size: 24px; font-weight: 700; }
+.container { max-width: 1200px; margin: 0 auto; padding: 40px; display: flex; gap: 40px; }
+.sidebar { width: 200px; flex-shrink: 0; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 20px; border-radius: 8px; height: fit-content; position: sticky; top: 20px; }
+.sidebar a { display: block; color: #f8fcff; text-decoration: none; padding: 12px 16px; margin-bottom: 8px; border-radius: 4px; transition: background 0.2s; font-size: 15px; }
+.sidebar a:hover { background: rgba(255,255,255,0.2); }
+.content { flex: 1; }
+.main-title { text-align: center; font-size: 48px; font-weight: 900; margin-bottom: 48px; }
+.content h3 { font-size: 24px; margin: 40px 0 16px; font-weight: 700; }
+.content h3:first-of-type { margin-top: 0; }
+.content p { margin-bottom: 12px; font-size: 16px; }
+.content ul { margin-bottom: 16px; padding-left: 24px; }
+.content li { margin-bottom: 8px; }
+.external-link { color: #f8fcff; text-decoration: underline; }
+.external-link:hover { opacity: 0.7; }
+.image-row { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 24px 0; }
+.image-row img { max-width: 100%; max-height: 500px; height: auto; border-radius: 8px; }
+@media (min-width: 1200px) { .container { max-width: 1600px; min-height: calc(100vh - 80px); } .sidebar { width: 280px; min-height: calc(100vh - 120px); padding: 32px 24px; } .sidebar a { font-size: 18px; padding: 16px 20px; } }
+@media (max-width: 768px) { .container { flex-direction: column; padding: 20px; } .sidebar { width: 100%; position: static; } .main-title { font-size: 36px; } }
+</style>
+</head>
+<body>
+<a href="index.html" class="back-btn">返回首頁</a>
+<script src="home-link.js"></script>
+<div class="header"><h1>個人貢獻書</h1></div>
+<div class="container">
+<div class="sidebar">
+<a href="#leader">組長</a>
+<a href="#art">美術組</a>
+<a href="#music">音樂組</a>
+<a href="#animation">動畫組</a>
+<a href="#exhibition">展場</a>
+<a href="#details">詳細圖片與網址</a>
+</div>
+<div class="content">
+<h1 class="main-title">個人貢獻書</h1>
+<section id="leader"><h3>組長</h3><ul><li>安排時程：規劃組內的時程表。</li><li>工作表安排：規劃組員們工作，並關注進度。</li><li>簡報製作：參與簡報製作，並確認最終版。</li><li>整合內容：將零碎的內容整合起來。</li></ul></section>
+<section id="art"><h3>美術組</h3><p><strong>主美術</strong></p><ul><li>設置與統合美術標準色與標準字。</li><li>整合UI總畫面設計。</li><li>字體與尺寸統合。</li><li>修改程式組所需圖，與程式組對接。</li></ul><p><strong>美術</strong></p><ul><li>將之前畫好的圖拆解UI與圖層（大廳、遊戲地圖、結算畫面、選角、連線畫面）</li><li>重製角色立繪</li></ul></section>
+<section id="music"><h3>音樂組</h3><p>參與音樂風格統一討論與製作。</p></section>
+<section id="animation"><h3>動畫組</h3><ul><li>角色走路動畫製作（共12部）</li><li>角色拿東西動畫製作（共120部）</li><li>宣傳片製作</li></ul></section>
+<section id="exhibition"><h3>展場</h3><ul><li>製作宣傳片與橫式海報</li><li>印刷廠對接與聯繫</li><li>展場設計</li><li>珍珠板設計</li></ul></section>
+<section id="details"><h3>詳細圖片與網址</h3><p><strong>組長</strong></p><p>時程工作表安排：</p><ul><li>寒假工作表：<a href="https://canva.link/agr36o4ssyia7nq" target="_blank" rel="noopener noreferrer" class="external-link">Canva 連結</a></li><li>期中工作表：<a href="https://canva.link/19huw706zadg7r2" target="_blank" rel="noopener noreferrer" class="external-link">Canva 連結</a></li></ul><p><strong>主美術</strong></p><div class="image-row"><img src="index%20pic/5.png" alt="主美術作品 5"><img src="index%20pic/6.png" alt="主美術作品 6"><img src="index%20pic/7.png" alt="主美術作品 7"><img src="index%20pic/8.png" alt="主美術作品 8"><img src="index%20pic/9.png" alt="主美術作品 9"></div></section>
+</div></div>
+<script>document.querySelectorAll('.sidebar a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});});});</script>
+</body></html>

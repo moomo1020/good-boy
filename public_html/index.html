@@ -27,13 +27,32 @@ body {
 
 .logo-container {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .logo-container img {
   max-width: 400px;
   width: 80%;
   height: auto;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #f8fcff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+}
+
+.download-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .menu-links {
@@ -60,6 +79,7 @@ body {
   .menu-links {
     flex-direction: column;
     gap: 20px;
+    align-items: center;
   }
 }
 </style>
@@ -68,11 +88,15 @@ body {
 <div class="logo-container">
   <img src="index pic/乖小孩.png" alt="乖小孩">
 </div>
+<a href="downloads/乖小孩.zip" class="download-btn" download>下載遊戲</a>
 <div class="menu-links">
   <a href="about me.html">個人介紹</a>
+  <a href="video.html">影片觀看</a>
   <a href="work.html">網站練習</a>
   <a href="my project.html">個人企畫書</a>
   <a href="my project.html">團體企畫書</a>
+  <a href="final-report.html">結案報告書</a>
+  <a href="contribution.html">個人貢獻書</a>
 </div>
 </body>
 </html>

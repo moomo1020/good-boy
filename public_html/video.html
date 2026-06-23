@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>乖小孩 - 影片觀看</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Noto Sans TC", sans-serif; background: #90DDE9; color: #f8fcff; line-height: 1.8; min-height: 100vh; }
+.back-btn { position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: #f8fcff; text-decoration: none; border-radius: 4px; z-index: 100; }
+.back-btn:hover { background: rgba(255,255,255,0.3); }
+.header { background: rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.3); padding: 20px 40px; text-align: center; }
+.header h1 { font-size: 28px; font-weight: 800; }
+.header p { font-size: 15px; opacity: 0.9; margin-top: 8px; }
+.page { max-width: 1200px; margin: 0 auto; padding: 40px 24px 60px; }
+.player-wrap { background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.25); border-radius: 12px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+.player { max-width: 960px; margin: 0 auto; text-align: center; } .player iframe { width: 100%; max-width: 960px; height: 540px; border: none; border-radius: 8px; background: #000; display: block; margin: 0 auto; }
+.player-info { padding: 24px 28px; background: rgba(255,255,255,0.1); }
+.player-info h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+.playlist { margin-top: 32px; }
+.playlist h3 { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+.playlist-items { display: grid; gap: 12px; }
+.playlist-btn { display: block; width: 100%; text-align: left; padding: 16px 20px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 8px; color: #f8fcff; font-family: inherit; font-size: 16px; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+.playlist-btn:hover { background: rgba(255,255,255,0.2); }
+.playlist-btn.active { background: rgba(255,255,255,0.28); border-color: rgba(255,255,255,0.5); font-weight: 700; }
+.playlist-btn span { display: block; font-size: 13px; opacity: 0.75; margin-top: 4px; font-weight: 400; }
+@media (max-width: 768px) { .page { padding: 24px 16px 40px; } .header h1 { font-size: 22px; } }
+</style>
+</head>
+<body>
+<script>if(location.protocol==="file:"){document.write('<div style="background:#c0392b;color:#fff;padding:12px 20px;text-align:center;font-family:sans-serif;font-size:14px;">您正在用本機檔案直接開啟，YouTube 無法播放。請雙擊「啟動本機預覽.bat」，再用 <strong>http://localhost:8080/video.html</strong> 開啟。</div>');}</script>
+<a href="index.html" class="back-btn">返回首頁</a>
+<script src="home-link.js"></script>
+<div class="header"><h1>影片觀看</h1><p>選擇下方影片，即可在此頁面直接觀看</p></div>
+<div class="page">
+  <div class="player-wrap">
+    <div class="player">
+      <iframe id="main-player" width="560" height="315" src="https://www.youtube.com/embed/uLVe3DZEMkY?si=8N5XMbMAcpyH4x67" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="player-info"><h2 id="video-title">乖小孩宣傳片</h2><p id="video-desc">展場宣傳影片，可直接在此頁面播放。</p></div>
+  </div>
+  <div class="playlist">
+    <h3>影片列表</h3>
+    <div class="playlist-items">
+      <button type="button" class="playlist-btn active" data-src="https://www.youtube.com/embed/uLVe3DZEMkY?si=8N5XMbMAcpyH4x67" data-title="乖小孩宣傳片" data-desc="展場宣傳影片，可直接在此頁面播放。">乖小孩宣傳片<span>展場影片</span></button>
+      <button type="button" class="playlist-btn" data-src="https://www.youtube.com/embed/RSyoMsWRL9I?si=KELItCvkYauPPlf4" data-title="youtube參考" data-desc="參考 Nintendo of America 的遊戲製作。">youtube參考<span>遊戲製作參考</span></button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var player = document.getElementById('main-player');
+  var titleEl = document.getElementById('video-title');
+  var descEl = document.getElementById('video-desc');
+  var buttons = document.querySelectorAll('.playlist-btn');
+
+  function playVideo(src, title, desc) {
+    player.src = src;
+    titleEl.textContent = title;
+    descEl.textContent = desc;
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-src') === src);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      playVideo(btn.getAttribute('data-src'), btn.getAttribute('data-title'), btn.getAttribute('data-desc'));
+    });
+  });
+
+  var params = new URLSearchParams(window.location.search);
+  var start = params.get('v');
+  if (start === 'RSyoMsWRL9I') {
+    var refBtn = document.querySelector('.playlist-btn[data-src*="RSyoMsWRL9I"]');
+    if (refBtn) playVideo(refBtn.getAttribute('data-src'), refBtn.getAttribute('data-title'), refBtn.getAttribute('data-desc'));
+  }
+})();
+</script>
+</body></html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>乖小孩提案 - 框架頁</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body { font-family: "Noto Sans TC", sans-serif; background: #90DDE9; color: #f8fcff; display: flex; flex-direction: column; overflow: hidden; }
+.back-btn { position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: #f8fcff; text-decoration: none; border-radius: 4px; z-index: 100; }
+.back-btn:hover { background: rgba(255,255,255,0.3); }
+.frame-header { background: rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.3); padding: 16px 40px; flex-shrink: 0; }
+.frame-header h1 { font-size: 24px; font-weight: 700; }
+.frame-body { display: flex; flex: 1; min-height: 0; max-width: 1920px; width: 100%; margin: 0 auto; }
+.frame-sidebar { width: 280px; flex-shrink: 0; background: rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.2); padding: 32px 24px; overflow-y: auto; }
+.frame-sidebar-title { font-size: 14px; font-weight: 700; letter-spacing: 2px; opacity: 0.7; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+.frame-sidebar a { display: block; color: #f8fcff; text-decoration: none; padding: 16px 20px; margin-bottom: 8px; border-radius: 6px; font-size: 18px; font-weight: 500; transition: background 0.2s; cursor: pointer; }
+.frame-sidebar a:hover, .frame-sidebar a.active { background: rgba(255,255,255,0.2); }
+.frame-content { flex: 1; min-width: 0; background: rgba(255,255,255,0.05); }
+.frame-content iframe { width: 100%; height: 100%; border: none; display: block; }
+@media (max-width: 1200px) { body { overflow: auto; } .frame-body { flex-direction: column; } .frame-sidebar { width: 100%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); } .frame-content { min-height: 60vh; } }
+</style>
+</head>
+<body>
+<a href="work.html" class="back-btn">返回網站練習</a>
+<script src="home-link.js"></script>
+<div class="frame-header"><h1>框架頁</h1></div>
+<div class="frame-body">
+<nav class="frame-sidebar">
+<div class="frame-sidebar-title">書籤導覽</div>
+<a href="frame-content.html?page=intro" target="content-frame" class="active" data-page="intro">遊戲介紹</a>
+<a href="frame-content.html?page=concept" target="content-frame" data-page="concept">我們的理念</a>
+<a href="frame-content.html?page=video" target="content-frame" data-page="video">展場影片</a>
+<a href="frame-content.html?page=about" target="content-frame" data-page="about">關於框架頁</a>
+</nav>
+<div class="frame-content"><iframe name="content-frame" src="frame-content.html?page=intro" title="框架內容"></iframe></div>
+</div>
+<script>document.querySelectorAll('.frame-sidebar a[target="content-frame"]').forEach(function(link){link.addEventListener('click',function(){document.querySelectorAll('.frame-sidebar a').forEach(function(a){a.classList.remove('active');});link.classList.add('active');});});</script>
+</body></html>
