@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>乖小孩提案 - 網站練習</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,42 +50,62 @@ body {
   font-weight: 700;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px;
+.layout {
   display: flex;
-  gap: 40px;
+  max-width: 1920px;
+  margin: 0 auto;
+  min-height: calc(100vh - 65px);
 }
 
 .sidebar {
-  width: 200px;
+  width: 280px;
   flex-shrink: 0;
   background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 20px;
-  border-radius: 8px;
-  height: fit-content;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 32px 24px;
   position: sticky;
-  top: 20px;
+  top: 0;
+  align-self: flex-start;
+  min-height: calc(100vh - 65px);
+}
+
+.sidebar-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .sidebar a {
   display: block;
   color: #f8fcff;
   text-decoration: none;
-  padding: 12px 16px;
+  padding: 16px 20px;
   margin-bottom: 8px;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 500;
   transition: background 0.2s;
 }
 
-.sidebar a:hover {
+.sidebar a:hover,
+.sidebar a.active {
   background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar .frame-link {
+  margin-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 24px;
 }
 
 .content {
   flex: 1;
+  padding: 40px 60px;
+  max-width: calc(1920px - 280px);
 }
 
 .content h2 {
@@ -97,12 +118,6 @@ body {
   margin-top: 0;
 }
 
-.content h3 {
-  font-size: 24px;
-  margin: 40px 0 16px;
-  font-weight: 700;
-}
-
 .content p {
   margin-bottom: 16px;
   font-size: 16px;
@@ -112,7 +127,7 @@ body {
   text-align: center;
   font-size: 48px;
   font-weight: 900;
-  margin: 60px 0;
+  margin: 20px 0 48px;
 }
 
 .image-container {
@@ -126,24 +141,71 @@ body {
   border-radius: 8px;
 }
 
-.video-container {
-  text-align: center;
+.video-section {
   margin: 32px 0;
 }
 
-.video-container iframe {
-  max-width: 100%;
+.yt-embed {
+  max-width: 960px;
+  margin: 24px auto;
+  text-align: center;
+}
+
+.yt-embed iframe {
+  width: 100%;
+  max-width: 960px;
+  height: 540px;
+  border: none;
   border-radius: 8px;
+  background: #000;
+  display: block;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
-  .container {
+  .yt-embed iframe {
+    height: 220px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .layout {
     flex-direction: column;
   }
+
   .sidebar {
     width: 100%;
     position: static;
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 20px;
   }
+
+  .sidebar-title {
+    width: 100%;
+  }
+
+  .sidebar a {
+    font-size: 15px;
+    padding: 12px 16px;
+    margin-bottom: 0;
+  }
+
+  .sidebar .frame-link {
+    width: 100%;
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+
+  .content {
+    padding: 32px 24px;
+    max-width: 100%;
+  }
+
   .main-title {
     font-size: 36px;
   }
@@ -151,6 +213,11 @@ body {
 </style>
 </head>
 <body>
+<script>
+if (location.protocol === 'file:') {
+  document.write('<div style="background:#c0392b;color:#fff;padding:12px 20px;text-align:center;font-family:sans-serif;font-size:14px;">您正在用本機檔案直接開啟，YouTube 無法播放。請雙擊「啟動本機預覽.bat」，再用 <strong>http://localhost:8080/work.html</strong> 開啟。</div>');
+}
+</script>
 <a href="index.html" class="back-btn">返回首頁</a>
 <script src="home-link.js"></script>
 
@@ -158,14 +225,17 @@ body {
   <h1>乖小孩提案</h1>
 </div>
 
-<div class="container">
-  <div class="sidebar">
+<div class="layout">
+  <nav class="sidebar">
+    <div class="sidebar-title">書籤導覽</div>
     <a href="#intro">遊戲介紹</a>
     <a href="#concept">我們的理念</a>
     <a href="#youtube">youtube參考</a>
-  </div>
+    <a href="#exhibition-video">展場影片</a>
+    <a href="frame.html" class="frame-link">框架頁</a>
+  </nav>
 
-  <div class="content">
+  <main class="content">
     <h1 class="main-title">乖小孩提案</h1>
 
     <div class="image-container">
@@ -187,21 +257,29 @@ body {
 
     <section id="youtube">
       <h2>youtube參考</h2>
-      <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/RSyoMsWRL9I?si=XtiNyXOSGP18b9_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="yt-embed">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/RSyoMsWRL9I?si=KELItCvkYauPPlf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       <p>參考Nintendo of America的遊戲製作</p>
     </section>
-  </div>
+
+    <section id="exhibition-video">
+      <h2>展場影片</h2>
+      <div class="yt-embed">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/uLVe3DZEMkY?si=8N5XMbMAcpyH4x67" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <p>此區域可直接在網頁上觀賞展場 YouTube 影片。</p>
+    </section>
+  </main>
 </div>
 
 <script>
-document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('.sidebar a[href^="#"]').forEach(function (anchor) {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
+    var target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      target.scrollIntoView({ behavior: 'auto', block: 'start' });
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 });
